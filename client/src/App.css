@@ -1,0 +1,22 @@
+.App {
+  text-align: center;
+  
+  background-image: url('https://res.cloudinary.com/ophtalmoparis/w_1200,f_auto,q_auto/v1513869148/quels-sont-les-risques-des-casques-de-realite-virtuelle-sur-la-vision_ufaqsl.jpg');
+  
+position: fixed;
+min-width: 100%;
+min-height: 100%;
+background-size: cover;
+background-position: center;
+
+
+}
+.container{
+  color:white;
+  margin-top: 200px;
+  margin-left: 700px;
+  width : 400px;
+  /* border: solid; */
+  height: 400px;
+
+}
