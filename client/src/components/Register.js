@@ -8,6 +8,7 @@ const Register = () => {
   const [email, setEmail] = useState();
   const [phoneNumber, setPhoneNumber] = useState();
   const [password, setPassword] = useState();
+  const [role, setRole] = useState();
 
   const dispatch = useDispatch();
 
@@ -19,6 +20,7 @@ const Register = () => {
         email,
         phoneNumber,
         password,
+        role
       })
     );
 
@@ -26,7 +28,7 @@ const Register = () => {
     setEmail("");
     setPhoneNumber("");
     setPassword("");
-
+    setRole("");
   };
 
   return (
