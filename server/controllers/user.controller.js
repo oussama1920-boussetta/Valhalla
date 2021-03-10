@@ -8,7 +8,7 @@ const secretOrKey = process.env.secretOrKey;
 const jwt = require("jsonwebtoken");
 
 exports.userRegister = async (req, res) => {
-  const { name, email, phoneNumber, password } = req.body;
+  const { name, email, phoneNumber, password,role } = req.body;
   const searchResult = await User.findOne({ email });
 
   if (searchResult) return res.status(404).json({ msg: `User already exist` });
@@ -19,6 +19,7 @@ exports.userRegister = async (req, res) => {
       email,
       phoneNumber,
       password,
+      role
     });
 
     const salt = await bcrypt.genSalt(10);
@@ -51,6 +52,7 @@ exports.userLogin = async (req, res) => {
       name: user.name,
       email: user.email,
       phoneNumber: user.phoneNumber,
+      role:user.role
     };
 
     const token = await jwt.sign(payload, secretOrKey);

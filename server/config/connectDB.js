@@ -6,7 +6,7 @@ dotenv.config({ path: "./config/.env" });
 
 const connectDB = async () => {
   try {
-    mongoose.connect(process.env.MONGO_URI, {
+    mongoose.connect(process.env.mongo_uri, {
       useNewUrlParser: true,
       useUnifiedTopology: true,
     });
