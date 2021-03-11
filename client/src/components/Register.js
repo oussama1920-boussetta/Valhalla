@@ -2,7 +2,7 @@ import React, { useState,useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { userRegister } from "../JS/actions";
 import { Link } from "react-router-dom";
-
+import{Button} from 'react-bootstrap'
 const Register = () => {
   const [name, setName] = useState();
   const [email, setEmail] = useState();
@@ -11,7 +11,6 @@ const Register = () => {
   const [role, setRole] = useState();
 
   const dispatch = useDispatch();
-
 
   const addUser = () => {
     dispatch(
@@ -29,7 +28,6 @@ const Register = () => {
     setPhoneNumber("");
     setPassword("");
     setRole("")
-
   };
 
   useEffect(()=>{
@@ -37,52 +35,55 @@ const Register = () => {
   },[])
 
   return (
-    <div className="container">
+    <div className="container-nav">
       <Link to="/login">
-        <button> Login </button>
-      </Link>
+      <Button variant="danger">Login</Button>{' '}      </Link>
 
-      <div className="col-md-8 offset-md-4">
+      <div >
         <div className="row">
-          <h1>Register</h1>
+          <h3>Register</h3>
 
-          <div className="row mt-3">
+          <div>
             <input
               type="text"
               name="name"
+              placeholder='name'
               className="form-control"
-              onChange={(e) => setName(e.target.value)}
-            />
+              onChange={(e) => setName(e.target.value) }
+              required />
           </div>
-          <div className="row mt-3">
+          <div >
             <input
               type="text"
               name="email"
+              placeholder='Email'
               className="form-control"
               onChange={(e) => setEmail(e.target.value)}
-            />
+              required  />
           </div>
-          <div className="row mt-3">
+          <div >
             <input
               type="text"
               name="phoneNumber"
+              placeholder='phoneNumber'
               className="form-control"
               onChange={(e) => setPhoneNumber(e.target.value)}
             />
           </div>
-          <div className="row mt-3">
+          <div >
             <input
               type="password"
               name="password"
+              placeholder='password'
               className="form-control"
               onChange={(e) => setPassword(e.target.value)}
             />
           </div>
-          <div className="row mt-3">
-            <button type="submit" className="btn btn-primary" onClick={addUser}>
+          <div >
+          <Button variant="danger" onClick={addUser}>
               {" "}
-              Submit
-            </button>
+              Confirm
+            </Button>
           </div>
         </div>
       </div>
