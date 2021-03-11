@@ -1,3 +1,4 @@
+
 import React, { useState,useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { userRegister } from "../JS/actions";
@@ -10,18 +11,13 @@ const Register = () => {
   const [password, setPassword] = useState();
   const [role, setRole] = useState();
 
-  const dispatch = useDispatch();
 
-  const addUser = () => {
-    dispatch(
-      userRegister({
-        name,
-        email,
-        phoneNumber,
-        password,
-        role
-      })
-    );
+
+import RegisterModal from "./RegisterModal";
+import LoginModal from "./LoginModal";
+const Register = () => {
+
+
 
     setName("");
     setEmail("");
@@ -34,14 +30,17 @@ const Register = () => {
     setRole("User")
   },[])
 
-  return (
-    <div className="container-nav">
-      <Link to="/login">
-      <Button variant="danger">Login</Button>{' '}      </Link>
 
-      <div >
-        <div className="row">
-          <h3>Register</h3>
+  return (
+<div className="container-nav">
+  <LoginModal/>
+     
+
+      <RegisterModal/>
+
+
+
+
 
           <div>
             <input
@@ -87,6 +86,7 @@ const Register = () => {
           </div>
         </div>
       </div>
+
     </div>
   );
 };
