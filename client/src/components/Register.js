@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { userRegister } from "../JS/actions";
 import { Link } from "react-router-dom";
@@ -27,8 +27,12 @@ const Register = () => {
     setEmail("");
     setPhoneNumber("");
     setPassword("");
-    setRole("");
+    setRole("")
   };
+
+  useEffect(()=>{
+    setRole("User")
+  },[])
 
   return (
     <div className="container-nav">
@@ -75,7 +79,6 @@ const Register = () => {
               onChange={(e) => setPassword(e.target.value)}
             />
           </div>
-
           <div >
           <Button variant="danger" onClick={addUser}>
               {" "}
