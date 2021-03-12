@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Redirect } from "react-router-dom";
 import { userLogin } from "../JS/actions";
+import{Button,Spinner} from 'react-bootstrap'
 
 const Login = () => {
   const [email, setEmail] = useState();
@@ -28,13 +29,14 @@ const Login = () => {
   return (
     <div className="container">
       {loading ? (
-        <h1> Please wait </h1>
+          <Spinner animation="grow" variant="danger"  />
       ) : (
         <div className="col-md-3 offset-mt-3">
           <div className="row">
             <input
               type="text"
               name="email"
+              placeholder='Email'
               className="form-control"
               onChange={(e) => setEmail(e.target.value)}
             />
@@ -43,15 +45,18 @@ const Login = () => {
             <input
               type="password"
               name="password"
+              placeholder='Password'
               className="form-control"
               onChange={(e) => setPassword(e.target.value)}
             />
           </div>
           <div className="row">
-            <button type="submit" className="btn btn-primary" onClick={login}>
+          <Button variant="danger" onClick={login}>
               {" "}
-              Submit
-            </button>
+              Confirm
+            </Button>
+           
+
           </div>
         </div>
       )}
