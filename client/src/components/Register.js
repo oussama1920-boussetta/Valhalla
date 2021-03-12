@@ -1,9 +1,11 @@
 
 import React, { useState,useEffect } from "react";
-import { useDispatch } from "react-redux";
-import { userRegister } from "../JS/actions";
-import { Link } from "react-router-dom";
-import{Button} from 'react-bootstrap'
+
+import RegisterModal from "../components/RegisterModal";
+import LoginModal from "./LoginModal";
+
+
+
 const Register = () => {
   const [name, setName] = useState();
   const [email, setEmail] = useState();
@@ -13,8 +15,7 @@ const Register = () => {
 
 
 
-import RegisterModal from "./RegisterModal";
-import LoginModal from "./LoginModal";
+
 const Register = () => {
 
 
@@ -38,56 +39,10 @@ const Register = () => {
 
       <RegisterModal/>
 
+   </div>
+           
 
-
-
-
-          <div>
-            <input
-              type="text"
-              name="name"
-              placeholder='name'
-              className="form-control"
-              onChange={(e) => setName(e.target.value) }
-              required />
-          </div>
-          <div >
-            <input
-              type="text"
-              name="email"
-              placeholder='Email'
-              className="form-control"
-              onChange={(e) => setEmail(e.target.value)}
-              required  />
-          </div>
-          <div >
-            <input
-              type="text"
-              name="phoneNumber"
-              placeholder='phoneNumber'
-              className="form-control"
-              onChange={(e) => setPhoneNumber(e.target.value)}
-            />
-          </div>
-          <div >
-            <input
-              type="password"
-              name="password"
-              placeholder='password'
-              className="form-control"
-              onChange={(e) => setPassword(e.target.value)}
-            />
-          </div>
-          <div >
-          <Button variant="danger" onClick={addUser}>
-              {" "}
-              Confirm
-            </Button>
-          </div>
-        </div>
-      </div>
-
-    </div>
+  
   );
 };
 
