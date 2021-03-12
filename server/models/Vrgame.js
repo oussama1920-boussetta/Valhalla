@@ -1,9 +1,9 @@
 const mongoose = require("mongoose");
 
-const reservationSchema = mongoose.Schema({
+const vrgameSchema = mongoose.Schema({
   title: String,
   descripion:String,
   gameImage:Image
 });
 
-module.exports = Reservation = mongoose.model("reservation", reservationSchema);
+module.exports = Vrgame = mongoose.model("vrgame", vrgameSchema);
