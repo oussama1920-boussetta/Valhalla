@@ -1,4 +1,3 @@
-import { stringify } from "querystring";
 import React from "react";
 import { useSelector } from "react-redux";
 
@@ -7,7 +6,7 @@ const Profile = () => {
   const loading = useSelector((state) => state.userReducer.loading);
 
   return (
-    <div>{loading ? <h1>Please wait </h1> : <p>{JSON.stringify(user)}</p>}</div>
+    <div>{loading ? <h1>Please wait </h1> : <p style={{color:"red"}}>{JSON.stringify(user)}</p>}</div>
   );
 };
 

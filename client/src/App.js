@@ -10,6 +10,8 @@ import Nav from "./components/Nav";
 import { Button } from "bootstrap";
 import { getReservations } from './JS/actions/reservationAction';
 import ReservationsTable from './components/ReservationsTable';
+import ReservationModal from './components/ReservationModal';
+
 
 const App = () => {
   const dispatch = useDispatch();
@@ -30,6 +32,7 @@ const App = () => {
   return (
     <BrowserRouter>
     <div className="App">
+      <ReservationModal/>
       <Link to ="/reservations_list">
         <button>Reservations</button>
       </Link>
@@ -38,14 +41,11 @@ const App = () => {
         {/* <Route exact path="/login" render={(props) => <Login {...props} />} /> */}
 
          {/* Router for reservations */}
-
-        {/* <Route path="/reservations_list" component={ReservationsTable}
+   <Route path="/reservations_list"
         render={()=>(<div className="reservationsList">
             {reservations.map((el,i)=>(<ReservationsTable reservation={el} key={i} />))}
         </div>)}
-        /> */}
-
-
+        />
         <PrivateRoute exact path="/profile" component={Profile} />
       </Switch>
 

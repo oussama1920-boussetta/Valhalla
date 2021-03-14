@@ -1,6 +1,6 @@
 import React from 'react'
 
-const ReservationsTable = (reservation) => {
+const ReservationsTable = ({reservation}) => {
     console.log(reservation)
     return (
         <div>
