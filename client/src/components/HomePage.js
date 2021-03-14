@@ -1,9 +1,9 @@
 import React from "react";
 
-import RegisterModal from "../components/RegisterModal";
+import RegisterModal from "./RegisterModal";
 import LoginModal from "./LoginModal";
 
-const Register=()=>{  return (
+const HomePage=()=>{  return (
   <div className="container-nav">
     <LoginModal />
     <RegisterModal />
@@ -13,4 +13,4 @@ const Register=()=>{  return (
 
 
 
-export default Register;
+export default HomePage;

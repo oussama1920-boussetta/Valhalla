@@ -10,6 +10,9 @@
   "author": "mohamed oussama boussetta",
   "license": "ISC",
   "dependencies": {
-    "concurrently": "^6.0.0"
+    "bootstrap": "^4.6.0",
+    "concurrently": "^6.0.0",
+    "jquery": "^3.6.0",
+    "reactstrap": "^8.9.0"
   }
 }
