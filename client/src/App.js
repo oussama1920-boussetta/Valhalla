@@ -9,20 +9,34 @@ import PrivateRoute from "./components/PrivateRoute";
 import Nav from "./components/Nav";
 import { Button } from "bootstrap";
 import { getReservations } from './JS/actions/reservationAction';
+import { getGames } from './JS/actions/gameAction';
 import ReservationsTable from './components/ReservationsTable';
 import ReservationModal from './components/ReservationModal';
+import GamesList from './components/GamesList';
+import LoginModal from './components/LoginModal';
+
 
 
 const App = () => {
   const dispatch = useDispatch();
   const isAuth = useSelector((state) => state.userReducer.isAuth);
+
   const reservations = useSelector((state) => state.reservationReducer.reservations);
   const getAllReservations = () => {
     dispatch(getReservations());
   };
 
+  const games = useSelector((state) => state.gameReducer.games);
+  const getAllGames = () => {
+    dispatch(getGames());
+  };
+
   useEffect(() => {
     getAllReservations();
+  }, []);
+
+  useEffect(() => {
+    getAllGames();
   }, []);
 
   useEffect(() => {
@@ -36,9 +50,12 @@ const App = () => {
       <Link to ="/reservations_list">
         <button>Reservations</button>
       </Link>
+      <Link to ="/games">
+        <button>Games</button>
+      </Link>
       <Switch>
         <Route exact path="/" render={(props) => <HomePage {...props} />} />
-        {/* <Route exact path="/login" render={(props) => <Login {...props} />} /> */}
+        {/* <Route exact path="/login" render={(props) => <LoginModal {...props} />} /> */}
 
          {/* Router for reservations */}
    <Route path="/reservations_list"
@@ -46,7 +63,16 @@ const App = () => {
             {reservations.map((el,i)=>(<ReservationsTable reservation={el} key={i} />))}
         </div>)}
         />
-        <PrivateRoute exact path="/profile" component={Profile} />
+
+                 {/* Router for games */}
+
+   <Route path="/games"
+        render={()=>(<div className="gamesList">
+            {games.map((el,i)=>(<GamesList game={el} key={i} />))}
+        </div>)}
+        />
+        {/* <PrivateRoute exact path="/profile" component={Profile} 
+         /> */}
       </Switch>
 
       <Nav />
