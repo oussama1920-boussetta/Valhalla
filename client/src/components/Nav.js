@@ -6,9 +6,13 @@ import valhalla from '../components/images/valhalla.png'
 import block from '../components/images/block.jpg'
 import vrgaming from '../components/images/vrgaming.jpg'
 import vrvr from '../components/images/vrvr.jpg'
+import LoginModal from './LoginModal';
+import RegisterModal from './RegisterModal';
 function Nav() {
     return (
         <div className='car'>
+              <LoginModal />
+              <RegisterModal />
 <Carousel >
 
   <Carousel.Item>

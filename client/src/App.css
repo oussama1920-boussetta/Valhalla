@@ -39,10 +39,9 @@ background-position: center;
   height: 150px;
 }
 .container-nav{
-  background-color: brown;
+
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
+  background-color: black;
 }
-h1{
-  color: red;
-}
+
