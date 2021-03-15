@@ -8,7 +8,6 @@ const reservationSchema = mongoose.Schema({
   },
   time:Number,
   price: Number,
-  status:String
 });
 
 module.exports = Reservation = mongoose.model("reservation", reservationSchema);

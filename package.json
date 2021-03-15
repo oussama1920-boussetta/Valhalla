@@ -1,5 +1,5 @@
 {
-  "name": "Valhalla",
+  "name": "authentification",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -10,9 +10,6 @@
   "author": "mohamed oussama boussetta",
   "license": "ISC",
   "dependencies": {
-    "bootstrap": "^4.6.0",
-    "concurrently": "^6.0.0",
-    "jquery": "^3.6.0",
-    "reactstrap": "^8.9.0"
+    "concurrently": "^6.0.0"
   }
 }
