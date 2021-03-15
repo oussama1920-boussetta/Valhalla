@@ -1,13 +1,19 @@
 import { stringify } from "querystring";
 import React from "react";
 import { useSelector } from "react-redux";
+import GamesList from "./GamesList";
+import ReservationsTable from './ReservationsTable';
+import ReservationModal from './ReservationModal';
+
 
 const Profile = () => {
-  const user = useSelector((state) => state.userReducer.user);
-  const loading = useSelector((state) => state.userReducer.loading);
-
   return (
-    <div>{loading ? <h1>Please wait </h1> : <p>{JSON.stringify(user)}</p>}</div>
+    <div>
+      <GamesList/>
+      <h2>Reservations :</h2>
+      <ReservationsTable/>
+      <ReservationModal/>
+    </div>
   );
 };
 

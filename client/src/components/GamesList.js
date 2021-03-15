@@ -1,14 +1,24 @@
 import React from 'react'
+import { getGames } from '../JS/actions/gameAction';
+import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
 
-const GamesList = ({game}) => {
-    console.log(game)
+const GamesList = () => {
+    const dispatch = useDispatch();
+    const games = useSelector((state) => state.gameReducer.games);
+    const getAllGames = () => {
+      dispatch(getGames());
+    };
+    useEffect(() => {
+        getAllGames();
+      }, []);
     return (
         <div>
-            <ul>
+            {games.map((game)=>(<ul>
                 <li>{game.title}</li>
                 <li>{game.description}</li>
                 <li>{game.price}</li>
-            </ul>
+            </ul>  ))}
         </div>
     )
 }

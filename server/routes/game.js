@@ -16,7 +16,7 @@ router.post('/',(req,res)=>{
     const newGame = new Game({
         title: req.body.title,
         description:req.body.description,
-        price:req.body.price
+        price:req.body.price,
     });
     newGame.save()
     .then(games=>res.json(games))
