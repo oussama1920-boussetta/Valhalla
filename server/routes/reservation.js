@@ -17,6 +17,7 @@ router.post('/',(req,res)=>{
         userName: req.body.userName,
         time:req.body.time,
         price:req.body.price,
+        status:req.body.status
     });
     newReservation.save()
     .then(reservations=>res.json(reservations))

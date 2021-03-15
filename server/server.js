@@ -3,6 +3,7 @@ const connectDB=require('./config/connectDB')
 
 const user =require('./routes/user')
 const reservations = require('./routes/reservation')
+const games = require('./routes/game')
 
 const app = express()
 
@@ -11,6 +12,7 @@ connectDB();
 
 app.use('/user',user)  
 app.use('/reservations',reservations) 
+app.use ('/games',games)
 
 
 const PORT = process.env.PORT || 5000
