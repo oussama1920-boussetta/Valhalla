@@ -1,4 +1,4 @@
-import React, { useState} from "react";
+import React, { useState, useEffect} from "react";
 import { useDispatch } from "react-redux";
 import { addReservation } from "../JS/actions/reservationAction";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -11,7 +11,8 @@ const ReservationModal = () => {
     const [userName,setUsername]= useState();
     const [date,setDate]= useState();
     const [time,setTime]= useState();
-    const [price,setPrice]= useState();
+    const [price,setPrice]= useState();    
+    const [status,setStatus]= useState();    
     const [show, setShow] = useState(false);
     const dispatch = useDispatch();
     const handleClose = () => setShow(false);
@@ -24,6 +25,7 @@ const ReservationModal = () => {
                 date,
                 time,
                 price,
+                status
           })
         );
     
@@ -33,7 +35,13 @@ const ReservationModal = () => {
         setTime("");
         // price will be automatically set based on game price
         setPrice("");
+        //
+        setStatus("");
       }
+
+      useEffect(() => {
+        setStatus("Pending");
+      }, []);
   
     return (
         <div className="Modal">
