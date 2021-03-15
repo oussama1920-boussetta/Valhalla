@@ -11,8 +11,9 @@ import RegisterModal from './RegisterModal';
 function Nav() {
     return (
         <div className='car'>
+          <div className='navnav'>
               <LoginModal />
-              <RegisterModal />
+              <RegisterModal /></div>
 <Carousel >
 
   <Carousel.Item>
