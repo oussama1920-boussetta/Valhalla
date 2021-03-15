@@ -18,8 +18,7 @@ const LoginModal=()=> {
     setToken(localStorage.getItem("token"));
   }, []);
 
-  const loading = useSelector((state) => state.userReducer.loading);
-
+  const isAuth = useSelector((state) => state.userReducer.isAuth);
   const dispatch = useDispatch();
 
   const login = (e) => {
@@ -39,14 +38,9 @@ const LoginModal=()=> {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
+  if(isAuth) return <Redirect to='/profile'/>
   return (
     <div>
-      {token ? (
-        <Redirect to="/profile" />
-      ) : loading ? (
-        <h1> Please wait </h1>
-      ) : ( 
-      <div>
       <Button variant="danger" onClick={handleShow}>
       Login
     </Button>
@@ -101,10 +95,6 @@ const LoginModal=()=> {
       </Modal.Footer>
     </Modal>
     </div>
-      )};
-     
-    </div>
-  );
-}
+  )}
 
 export default LoginModal;

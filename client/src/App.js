@@ -2,7 +2,6 @@ import { Link, Switch, Route, BrowserRouter } from "react-router-dom";
 import "./App.css";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import HomePage from "./components/HomePage";
 import Profile from "./components/Profile";
 import { getProfile } from "./JS/actions";
 import PrivateRoute from "./components/PrivateRoute";
@@ -13,7 +12,6 @@ import { getGames } from './JS/actions/gameAction';
 import ReservationsTable from './components/ReservationsTable';
 import ReservationModal from './components/ReservationModal';
 import GamesList from './components/GamesList';
-import LoginModal from './components/LoginModal';
 
 
 
@@ -54,8 +52,8 @@ const App = () => {
         <button>Games</button>
       </Link>
       <Switch>
-        <Route exact path="/" render={(props) => <HomePage {...props} />} />
-        {/* <Route exact path="/login" render={(props) => <LoginModal {...props} />} /> */}
+        <Route exact path="/" render={(props) => <Nav {...props} />} />
+        <Route exact path="/profile" component={Profile} render={(props) => <Profile {...props} />} />
 
          {/* Router for reservations */}
    <Route path="/reservations_list"
@@ -71,11 +69,8 @@ const App = () => {
             {games.map((el,i)=>(<GamesList game={el} key={i} />))}
         </div>)}
         />
-        {/* <PrivateRoute exact path="/profile" component={Profile} 
-         /> */}
-      </Switch>
 
-      <Nav />
+      </Switch>
     </div>
     </BrowserRouter>
   );
