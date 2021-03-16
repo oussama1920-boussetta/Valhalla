@@ -6,6 +6,10 @@ import theSecret from '../components/images/thesecret.jpg'
 import deadandBuried from '../components/images/Dead&Buried.jpg'
 import angryBirds from '../components/images/angrybirds.jpg'
 import beatSaber from '../components/images/beastSaber.jpg'
+import {Card} from 'react-bootstrap'
+
+
+
 
 const imagesArr= [theSecret,deadandBuried,angryBirds,beatSaber]
 console.log(imagesArr)
@@ -18,16 +22,39 @@ const GamesList = () => {
     useEffect(() => {
         getAllGames();
       }, []);
+
+
+
     return (
-        <div>
-            {games.map((game,index)=>(<ul>
-                <li>{game.title}</li>
-                <img width='300' src={imagesArr[index]}/>
-                <li>{game.description}</li>
-                <li>{game.price}</li>
-            </ul>  ))}
-        </div>
-    )
+      
+
+        <div className='games'>
+
+
+
+      
+    {games.map((game,index)=>(
+
+<Card style={{ width: '18rem' }}>
+<Card.Img   src={imagesArr[index]} alt='titre'/>
+<Card.Body>
+<h1>{game.title}</h1>
+<h4>
+{game.description }</h4>
+
+<Card.Link href="#">{game.price}</Card.Link>
+</Card.Body>
+</Card>)
+    )}
+</div> )
+
+
 }
 
 export default GamesList
+
+
+
+
+
+

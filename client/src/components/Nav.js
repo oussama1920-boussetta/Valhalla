@@ -22,7 +22,7 @@ function Nav() {
       src={vrvr}
       alt="First slide"
     />
-    <Carousel.Caption>
+    <Carousel.Caption >
     <img className='val'
       src={valhalla}
       alt=""

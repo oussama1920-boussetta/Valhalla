@@ -51,7 +51,7 @@ const ReservationModal = () => {
     
           <Modal show={show} onHide={handleClose} animation={false}>
             <Modal.Header closeButton>
-              <Modal.Title>Reservation</Modal.Title>
+              <h3>Reservation </h3>
             </Modal.Header>
             <Modal.Body className="Add">
               <Card.Body>
@@ -60,7 +60,7 @@ const ReservationModal = () => {
                     <Form.Group
                       style={{ textAlign: "left" }}
                     >
-                      <Form.Label>User Name :</Form.Label>
+                    <h6>     <Form.Label>User Name :</Form.Label></h6>
                       <Form.Control
                         type="text"
                         name="username"
@@ -73,7 +73,7 @@ const ReservationModal = () => {
                     <Form.Group
                       style={{ textAlign: "left" }}
                     >
-                      <Form.Label>Date :</Form.Label>
+                     <h6>    <Form.Label>Date :</Form.Label></h6>
                       <Form.Control
                         type="text"
                         name="date"
@@ -85,7 +85,7 @@ const ReservationModal = () => {
                     <Form.Group
                       style={{ textAlign: "left" }}
                     >
-                      <Form.Label>time :</Form.Label>
+                 <h6>     <Form.Label>time :</Form.Label></h6>
                       <Form.Control
                         type="text"
                         name="time"
@@ -97,7 +97,7 @@ const ReservationModal = () => {
                     <Form.Group
                       style={{ textAlign: "left" }}
                     >
-                      <Form.Label>Price :</Form.Label>
+                   <h6>      <Form.Label>Price :</Form.Label></h6>
                       <Form.Control
                         type="text"
                         name="price"
