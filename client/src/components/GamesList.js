@@ -12,7 +12,6 @@ import {Card} from 'react-bootstrap'
 
 
 const imagesArr= [theSecret,deadandBuried,angryBirds,beatSaber]
-console.log(imagesArr)
 const GamesList = () => {
     const dispatch = useDispatch();
     const games = useSelector((state) => state.gameReducer.games);

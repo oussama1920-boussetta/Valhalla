@@ -26,6 +26,7 @@ const ReservationsTable = () => {
 
            <table>
            {reservations.map((reservation,index)=>( 
+
           <div>
            
            <tr>
