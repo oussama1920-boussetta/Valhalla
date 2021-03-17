@@ -57,7 +57,7 @@ const LoginModal=()=> {
                 controlId="formBasicEmail"
                 style={{ textAlign: "left" }}
               >
-                <Form.Label>email :</Form.Label>
+        <h6>        <Form.Label>Email :</Form.Label></h6>
                 <Form.Control
                   type="email"
                   name="email"
@@ -70,7 +70,7 @@ const LoginModal=()=> {
                 controlId="formBasicEmail"
                 style={{ textAlign: "left" }}
               >
-                <Form.Label>password :</Form.Label>
+               <h6>      <Form.Label>Password :</Form.Label></h6>
                 <Form.Control
                   type="password"
                   name="password"

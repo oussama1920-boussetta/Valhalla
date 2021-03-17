@@ -59,7 +59,7 @@ import { Button, Card, Form } from "react-bootstrap";
                   controlId="formBasicEmail"
                   style={{ textAlign: "left" }}
                 >
-                  <Form.Label>name :</Form.Label>
+                 <h6>      <Form.Label>Name :</Form.Label></h6>
                   <Form.Control
                     type="text"
                     name="name"
@@ -73,7 +73,7 @@ import { Button, Card, Form } from "react-bootstrap";
                   controlId="formBasicEmail"
                   style={{ textAlign: "left" }}
                 >
-                  <Form.Label>email :</Form.Label>
+             <h6>          <Form.Label>Email :</Form.Label></h6>
                   <Form.Control
                     type="email"
                     name="email"
@@ -86,7 +86,7 @@ import { Button, Card, Form } from "react-bootstrap";
                   controlId="formBasicEmail"
                   style={{ textAlign: "left" }}
                 >
-                  <Form.Label>password :</Form.Label>
+                <h6>       <Form.Label>Password :</Form.Label></h6>
                   <Form.Control
                     type="password"
                     name="password"
@@ -99,7 +99,7 @@ import { Button, Card, Form } from "react-bootstrap";
                   controlId="formBasicEmail"
                   style={{ textAlign: "left" }}
                 >
-                  <Form.Label>phone :</Form.Label>
+                 <h6>      <Form.Label>Phone :</Form.Label></h6>
                   <Form.Control
                     type="text"
                     name="phone"

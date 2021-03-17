@@ -74,10 +74,45 @@ const ReservationModal = () => {
                          showTimeInput
                          />
                     </Form.Group>
+
+                    <h6>     <Form.Label>User Name :</Form.Label></h6>
+                      <Form.Control
+                        type="text"
+                        name="username"
+                        placeholder="Enter your name"
+                        onChange={(e)=>setUsername(e.target.value)}
+                        required
+                      />
+                    </Form.Group>
+    
                     <Form.Group
                       style={{ textAlign: "left" }}
                     >
-                      <Form.Label>Price :</Form.Label>
+                     <h6>    <Form.Label>Date :</Form.Label></h6>
+                      <Form.Control
+                        type="text"
+                        name="date"
+                        placeholder="Pick a date"
+                        onChange={(e)=>setDate(e.target.value)}
+                        required
+                      />
+                    </Form.Group>
+                    <Form.Group
+                      style={{ textAlign: "left" }}
+                    >
+                 <h6>     <Form.Label>time :</Form.Label></h6>
+                      <Form.Control
+                        type="text"
+                        name="time"
+                        placeholder="pick a time"
+                        onChange={(e)=>setTime(e.target.value)}
+                      />
+                    </Form.Group>
+    
+                    <Form.Group
+                      style={{ textAlign: "left" }}
+                    >
+                   <h6>      <Form.Label>Price :</Form.Label></h6>
                       <Form.Control
                         type="text"
                         name="price"
