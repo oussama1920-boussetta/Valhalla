@@ -33,7 +33,7 @@ router.delete('/:id',(req,res)=>{
 
 //@router PUT /games
 //@Desc update a game
-router.put("/:_id", (req, res) => {
+router.put("/:id", (req, res) => {
     let { _id } = req.params;
     Game.findByIdAndUpdate({ _id }, { $set: { ...req.body } })
       .then(() => res.send("Game has been updated"))
@@ -41,7 +41,19 @@ router.put("/:_id", (req, res) => {
   });
 
 
-
+  router.get('/:id', async(req, res) => {
+    await Game.findOne({ _id: req.params.id }, (err, game) => {
+        if (err) {
+            return res.status(400).json({ success: false, error: err })
+        }
+        if (!game) {
+            return res
+                .status(404)
+                .json({ success: false, error: `Game not found` })
+        }
+        return res.status(200).json({ success: true, data: game })
+    }).catch(err => console.log(err))
+});
 
 
 

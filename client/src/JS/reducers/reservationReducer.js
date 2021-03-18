@@ -1,8 +1,13 @@
-import {GET_RESERVATIONS,RESERVATIONS_LOADING, ADD_RESERVATION, DELETE_RESERVATION} from '../constants/actionsTypes'
+import {GET_RESERVATIONS,
+     RESERVATIONS_LOADING,
+     ADD_RESERVATION, 
+     DELETE_RESERVATION,
+     UPDATE_RESERVATION,
+    } from '../constants/actionsTypes'
 
 const initialState={
     reservations : [],
-    loading:false
+    loading:false,
 };
 
 const reservationReducer=(state=initialState,action)=>{
@@ -21,12 +26,17 @@ const reservationReducer=(state=initialState,action)=>{
         case DELETE_RESERVATION : 
         return {
             ...state,
-            reservations:state.reservations.filter(reservation=>reservation.id !== action.payload),
+            reservations:state.reservations.filter(reservation=>reservation._id !== action.payload),
         };
         case RESERVATIONS_LOADING :
         return {
             ...state,
             loading:true
+        };
+        case UPDATE_RESERVATION : 
+        return {
+            ...state,
+            reservations:state.reservations.map(reservation=>reservation._id===action.payload._id)
         }
         default: return state;
     }

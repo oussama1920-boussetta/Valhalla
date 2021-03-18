@@ -10,6 +10,13 @@ exports.registerRules = () => [
   check(`password`, `This is not a valid password`).isLength({ min: 5 }),
 ];
 
+exports.addResevationRules =()=>[
+  check(`userName`, `This field is required`).notEmpty(),
+  check(`date`, `This field is required`).notEmpty(),
+  check(`price`, `This field is a Number`).isNumeric(),
+  check(`price`, `This field is required`).notEmpty(),
+]
+
 exports.validator = (req, res, next) => {
   const errors = validationResult(req);
 

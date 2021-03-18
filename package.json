@@ -10,10 +10,14 @@
   "author": "mohamed oussama boussetta",
   "license": "ISC",
   "dependencies": {
+    "@material-ui/icons": "^4.11.2",
     "bootstrap": "^4.6.0",
     "concurrently": "^6.0.0",
     "jquery": "^3.6.0",
+    "node-sass": "^5.0.0",
+    "react-datepicker": "^3.6.0",
     "react-jwt": "^1.1.2",
-    "reactstrap": "^8.9.0"
+    "reactstrap": "^8.9.0",
+    "sass": "^1.32.8"
   }
 }

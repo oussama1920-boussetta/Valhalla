@@ -8,6 +8,8 @@ import PrivateRoute from "./components/PrivateRoute";
 import Nav from "./components/Nav";
 import { Button } from "bootstrap";
 import ReservationModal from './components/ReservationModal';
+import Gateway from './components/Gateway';
+import Adminpage from './components/Admin/Adminpage';
 
 
 
@@ -24,6 +26,8 @@ const App = () => {
       <Switch>
         <Route exact path="/" render={(props) => <Nav {...props} />} />
         <Route exact path="/profile" component={Profile} render={(props) => <Profile {...props} />} />
+        <Route exact path="/admin" component={Adminpage} render={(props) => <Adminpage {...props} />} />
+        <Route exact path ="/gateway" component={Gateway} render ={(props)=> <Gateway {...props}/>} />
       </Switch>
     </div>
     </BrowserRouter>
