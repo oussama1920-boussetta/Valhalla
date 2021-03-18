@@ -8,7 +8,6 @@ import angryBirds from '../components/images/angrybirds.jpg'
 import beatSaber from '../components/images/beastSaber.jpg'
 
 const imagesArr= [theSecret,deadandBuried,angryBirds,beatSaber]
-console.log(imagesArr)
 const GamesList = () => {
     const dispatch = useDispatch();
     const games = useSelector((state) => state.gameReducer.games);

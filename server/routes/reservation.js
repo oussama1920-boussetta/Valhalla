@@ -1,28 +1,33 @@
 const { json } = require('express');
 const express = require('express');
 const router = express.Router();
-
 //reservation Model
 const Reservation = require('../models/Reservation')
 //@router GET /Reservations
 //@Desc get all reservations
 router.get('/',(req,res)=>{
     Reservation.find()
-    .then(reservations=>res.json(reservations))
+    .populate('gamesList')
+    .exec()
+    .then(reservations=>res.json(reservations)
+    )
 })
+
 //@router POST /Reservations
 //@Desc add a reservation
-router.post('/',(req,res)=>{
-    const newReservation = new Reservation({
+router.post('/',async (req,res)=>{
+    try{
+        const newReservation = new Reservation({
         userName: req.body.userName,
-        time:req.body.time,
+        date:req.body.date,
         price:req.body.price,
-        status:req.body.status
+        status:req.body.status,
+        gamesList:req.body.gamesList
     });
     newReservation.save()
-    .then(reservations=>res.json(reservations))
-    
-})
+    res.status(201).json({success:true,data:newReservation})
+}catch(err){    res.status(400).json({success: false, message:err.message});}
+});
 //@router DELETE /Reservations
 //@Desc delete a reservation
 router.delete('/:id',(req,res)=>{

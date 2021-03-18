@@ -20,7 +20,6 @@ const ReservationsTable = () => {
            <ul>
                 <li>{reservation.userName}</li>
                 <li>{reservation.date}</li>
-                <li>{reservation.time}</li>
                 <li>{reservation.price}</li>
                 <li>{reservation.status}</li>
             </ul>))}

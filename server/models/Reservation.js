@@ -1,14 +1,23 @@
 const mongoose = require("mongoose");
-
+const game= require('../models/Game')
 const reservationSchema = mongoose.Schema({
-  userName: String,
+  userName:String,
   date: {
     type:Date,
-    default:Date.now
   },
-  time:Number,
-  price: Number,
-  status:String
+  
+  price: {
+    type:Number
+  },
+
+  status:String,
+
+  gamesList :[{
+    type : mongoose.Schema.Types.ObjectId,
+    ref:'game'
+  }]
+
 });
 
-module.exports = Reservation = mongoose.model("reservation", reservationSchema);
+
+module.exports = Reservation = mongoose.model('reservation', reservationSchema);
