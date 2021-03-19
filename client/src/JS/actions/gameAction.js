@@ -1,4 +1,4 @@
-import {GET_GAMES, GAMES_LOADING} from '../constants/actionsTypes';
+import {GET_GAMES, GAMES_LOADING,GET_GAMESBYID} from '../constants/actionsTypes';
 import  axios  from 'axios';
 
 export const getGames =()=>(dispatch)=>{
@@ -13,3 +13,5 @@ export const setGamesLoading=()=>{
             type:GAMES_LOADING
     }
 }
+
+

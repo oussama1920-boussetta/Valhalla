@@ -11,7 +11,7 @@ function TeteProfil() {
         src={text}
         width="1250"
         height="320"
-        
+        style={{marginLeft:"100px"}}
         className="d-inline-block align-top"
         alt="React Bootstrap logo"
       />

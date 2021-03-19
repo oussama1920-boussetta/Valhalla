@@ -1,8 +1,8 @@
-import {GET_GAMES, GAMES_LOADING} from '../constants/actionsTypes';
+import {GET_GAMES, GAMES_LOADING, GET_GAMESBYID} from '../constants/actionsTypes';
 
 const initialState={
     games : [],
-    loading:false
+    loading:false,
 };
 
 const gameReducer=(state=initialState,action)=>{
@@ -17,7 +17,10 @@ const gameReducer=(state=initialState,action)=>{
             return {
                 ...state,
                 loading:true
-            }
+            };
+            
+      
+        
             default: return state;
     }
 };

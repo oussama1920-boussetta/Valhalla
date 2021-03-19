@@ -38,7 +38,7 @@ const LoginModal=()=> {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
-  if(isAuth) return <Redirect to='/profile'/>
+  if(isAuth) return <Redirect to='/gateway'/>
   return (
     <div>
       <Button variant="danger" onClick={handleShow}>
