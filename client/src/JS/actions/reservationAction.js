@@ -3,7 +3,8 @@ import {
   RESERVATIONS_LOADING,
   ADD_RESERVATION,
   UPDATE_RESERVATION,
-  DELETE_RESERVATION
+  DELETE_RESERVATION,
+  VALIDATE_RESERVATION
 } from "../constants/actionsTypes";
 import axios from "axios";
 
@@ -20,12 +21,12 @@ export const getReservations = () => (dispatch) => {
 
 export const addReservation = (reservation) => (dispatch) => {
   try {
-    axios.post("/reservations", reservation).then((res) =>
+    axios.post("/reservations", reservation).then((res) => {
       dispatch({
         type: ADD_RESERVATION,
-        payload: res.data,
-      })
-    );
+        payload: res.data.newReservation,
+      });
+    });
   } catch (error) {
     console.log(error);
   }
@@ -45,24 +46,28 @@ export const modifyReservation = (id, updatedReservation) => (dispatch) => {
 };
 export const deleteReservation = (id) => (dispatch) => {
   try {
-    axios.delete(`/reservations/${id}`)
-      dispatch({
-        type: DELETE_RESERVATION,
-        payload: id ,
-      }) 
+    axios.delete(`/reservations/${id}`);
+    dispatch({
+      type: DELETE_RESERVATION,
+      payload: id,
+    });
+  } catch (error) {
+    console.log(error);
+  }
+};
+export const validateReservation = (id) => (dispatch) => {
+  try {
+    axios.patch(`/reservations/${id}`).then((res)=>  dispatch
+    ({
+      type: VALIDATE_RESERVATION,
+      payload: res.data.validReservation.status,
+    }))
   } catch (error) {
     console.log(error);
   }
 };
 
-// export const deleteReservation =(id)=>(dispatch)=>{
-//         axios
-//         .delete(`reservations/${id}`)
-//         .then((res)=>dispatch({
-//                 type:DELETE_RESERVATION,
-//                 payload:id
-//         }))
-// }
+
 
 export const setReservationsLoading = () => {
   return {

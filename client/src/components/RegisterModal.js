@@ -4,6 +4,8 @@ import { userRegister } from "../JS/actions";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Modal } from "react-bootstrap";
 import { Button, Card, Form } from "react-bootstrap";
+import swal from 'sweetalert';
+
 
 //Modal.setAppElement("#root");
     const RegisterModal = () =>{
@@ -29,12 +31,9 @@ import { Button, Card, Form } from "react-bootstrap";
       setEmail("");
       setPhoneNumber("");
       setPassword("");
-      setRole("");
-    }
-
-    useEffect(() => {
       setRole("User");
-    }, []);
+      swal("User added Successfully")
+    }
 
   const [show, setShow] = useState(false);
 

@@ -10,7 +10,7 @@ exports.registerReservation = async (req,res) =>{
             status,
           });
           await newReservation.save();
-          await res.status(201).json({ msg: `Reservation added successfully` });
+          await res.status(201).json({ msg: `Reservation added successfully`,newReservation: newReservation });
     } catch (error) {
         console.error("Reservation register failed", error);
         res.status(401).json({ msg: `Reservation register Failed` });
@@ -37,8 +37,17 @@ exports.updateReservation = async (req,res)=>{
 }
 
 exports.deleteReservation = async (req,res)=>{
-    const {id}= req.params;
-    if(mongoose.Types.ObjectId.isValid(id)) return res.status(404).send('No reservation has that Identifier')
-    await Reservation.findByIdAndRemove(id)
+    const {id:_id}= req.params;
+    console.log(id)
+    // if(mongoose.Types.ObjectId.isValid(id)) return res.status(404).send('No reservation has that Identifier')
+    await Reservation.findByIdAndRemove(_id)
     res.json({message : 'Reservation deleted successfully'})
+}
+
+exports.validateReservation = async (req,res)=>{
+    const {id} = req.params;
+   const validReservation= await Reservation.findOneAndUpdate(id,{$set:{status:'Valid'}})
+    await validReservation.save()
+    res.json({message: 'Reservation validated',validReservation})
+
 }

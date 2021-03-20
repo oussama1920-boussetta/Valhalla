@@ -2,7 +2,7 @@ import { stringify } from "querystring";
 import React, {useState} from "react";
 import GamesList from "./GamesList";
 import ReservationsTable from './ReservationsTable';
-import ReservationModal from './ReservationModal';
+import ReservationForm from './ReservationForm';
 import TeteProfil from './TeteProfil'
 
 const Profile = () => {
@@ -12,7 +12,7 @@ const Profile = () => {
      <TeteProfil/>
       <GamesList/>
       <ReservationsTable setcurrentId={setcurrentId}/>
-      <ReservationModal currentId={currentId} setcurrentId={setcurrentId} />
+      <ReservationForm currentId={currentId} setcurrentId={setcurrentId} />
     </div>
   );
 };

@@ -19,7 +19,7 @@ exports.userRegister = async (req, res) => {
       email,
       phoneNumber,
       password,
-      role
+      role:'User'
     });
 
     const salt = await bcrypt.genSalt(10);

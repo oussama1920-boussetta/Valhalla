@@ -1,8 +1,9 @@
 import React from "react";
 import { useDispatch } from 'react-redux';
 import { deleteReservation } from "../JS/actions/reservationAction";
+import ReservationForm from "./ReservationForm";
 
-const Reservation = ({ reservation, setcurrentId }) => {
+const Reservation = ({ reservation, setcurrentId, currentId }) => {
     const dispatch = useDispatch();
   return (
       <tr>
@@ -12,12 +13,19 @@ const Reservation = ({ reservation, setcurrentId }) => {
         <td> {reservation.status}</td>
         <td>
           <button onClick={()=>
-            setcurrentId(reservation._id)
-            } className="btnEdit">Edit</button>
+         { 
+           setcurrentId(reservation._id);
+         <ReservationForm currentId={currentId} />
+          }
+            } className="btnEdit"
+            >Edit
+            </button>
         </td>
         <td>
-          <button onClick={()=>
-                dispatch(deleteReservation(reservation._id))
+          <button onClick={()=>{ dispatch(deleteReservation(reservation._id) )
+                                  console.log(reservation._id)
+                }
+               
             } className="btnRemove">Delete</button>
         </td>
       </tr>

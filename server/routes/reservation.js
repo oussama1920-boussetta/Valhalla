@@ -3,7 +3,8 @@ const {
   registerReservation,
   fetchReservations,
   updateReservation,
-  deleteReservation
+  deleteReservation,
+  validateReservation
 } = require("../controllers/reservation.controller");
 const { validator, addResevationRules } = require("../middleware/validator");
 const router = express.Router();
@@ -12,6 +13,7 @@ router.post('/',addResevationRules(),validator,registerReservation)
 router.get('/',fetchReservations)
 router.put('/:_id',updateReservation)
 router.delete('/:_id',deleteReservation)
+router.patch('/:_id',validateReservation)
 //reservation Model
 // const Reservation = require('../models/Reservation')
 // //@router GET /Reservations

@@ -1,10 +1,9 @@
 import React from "react";
-import { getReservations,deleteReservation } from "../../JS/actions/reservationAction";
+import { getReservations,validateReservation } from "../../JS/actions/reservationAction";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import "./admin.css";
-import ReservationsTable from "../ReservationsTable";
-import ReservationModal from './../ReservationModal';
+
 
 
 
@@ -23,8 +22,35 @@ const Allreservations = () => {
 
   return (
     <div>
-    <ReservationsTable setcurrentId={setcurrentId}/>  
-    <ReservationModal currentId={currentId} setcurrentId={setcurrentId} />
+        <h2>Reservations :</h2>
+      <div className="Table">
+        <table>
+          <thead>
+            <tr>
+              <th>User Name </th>
+              <th>Date</th>
+              <th>price</th>
+              <th>Status of reservation</th>
+            </tr>
+          </thead>
+          <tbody>
+            {reservations.map((reservation) => (
+              <tr>
+                <td> {reservation.userName}</td>
+        <td> {reservation.date}</td>
+        <td> {reservation.price}</td>
+        <td> {reservation.status}</td>
+        <td><button onClick={()=>{
+           dispatch(validateReservation(reservation._id) )
+                                  console.log(reservation._id)
+                }
+               
+            } className="btnRemove">Validate</button></td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+        </div>
     </div>
   );
 };

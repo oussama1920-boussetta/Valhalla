@@ -96,3 +96,12 @@ h2{
   top: 185%;
   left: 45%;
 }
+
+.resForm{
+  border: blanchedalmond 1px solid;
+  color: white;
+  position: relative;
+  bottom: 280px;
+  left: 60px;
+  width: 20%;
+}

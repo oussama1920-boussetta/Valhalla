@@ -7,7 +7,7 @@ import { getProfile } from "./JS/actions";
 import PrivateRoute from "./components/PrivateRoute";
 import Nav from "./components/Nav";
 import { Button } from "bootstrap";
-import ReservationModal from './components/ReservationModal';
+import ReservationForm from './components/ReservationForm';
 import Gateway from './components/Gateway';
 import Adminpage from './components/Admin/Adminpage';
 

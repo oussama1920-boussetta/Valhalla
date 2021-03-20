@@ -3,6 +3,7 @@ import {GET_RESERVATIONS,
      ADD_RESERVATION, 
      DELETE_RESERVATION,
      UPDATE_RESERVATION,
+     VALIDATE_RESERVATION
     } from '../constants/actionsTypes'
 
 const initialState={
@@ -21,7 +22,7 @@ const reservationReducer=(state=initialState,action)=>{
         case ADD_RESERVATION : 
         return {
             ...state,
-            reservations:[action.payload,...state.reservations],
+            reservations:[...state.reservations,action.payload],
         };
         case DELETE_RESERVATION : 
         return {
@@ -37,6 +38,11 @@ const reservationReducer=(state=initialState,action)=>{
         return {
             ...state,
             reservations:state.reservations.map(reservation=>reservation._id===action.payload._id)
+        }
+        case VALIDATE_RESERVATION : 
+        return {
+            ...state,
+            reservations:state.reservations.map((reservation,i)=> i ===1?{...reservation,status:action.payload}:reservation)
         }
         default: return state;
     }
